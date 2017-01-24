@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+
+<div class="box">
+	<div class="showText"></div>
+	<input type="button" id="btn" value="获取">
+</div>
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/mockjs/dist/mock-min.js"></script>
+<script>
+	// var Random = Mock.Random;
+	// Random.natural(10, 100)
+	// var numData = Mock.mock('@natural(10, 100)')
+
+	// Random.float(60, 100);
+	// var floatData = Mock.mock('@float(60, 100, 3)')
+
+	// Random.url()
+	// var url = Mock.mock('@url');
+
+	// var data = Mock.mock({
+	// 	'regexp': /\w{1,10}/,
+	// 	'num': numData,
+	// 	'float': floatData,
+	// 	'url': url
+	// })
+
+	// console.log(data);
+
+
+	var Random = Mock.Random;
+
+	Mock.mock(
+		'/user',
+		{
+			'data|10':[
+				'aaa'
+			] 
+		}	
+ 	)
+
+
+	$("#btn").click(function(){
+		$.ajax({
+			url: 'user',
+			data: {},
+			dataType: 'json',
+			success: function(data){
+				console.log(data);
+			},
+			error: function(){
+				console.log('aaa');
+			}
+		})
+	})
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-title" content="">
+<title>手机实名</title>
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<!-- build:authentication_css   ../css/authentication.css -->
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/alert.css">
+<link rel="stylesheet" href="../css/certification/authentication.css">
+<!-- endbuild -->
+<!-- build:flexible_js   ../js/lib/flexible.min.js -->
+<script src="../js/lib/flexible.js"></script>
+<!-- endbuild -->
+</head>
+
+<body class="dialog-reset">
+<div class="wrap">
+    <section>
+        <!-- <div class="user-step">
+            <div class="step-w120">
+                <div class="step">
+                    <img src="../img/certification/step-1.png" alt="" class="step-one">
+                </div>
+                <div class="f28 mt15">验证身份</div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step-w120">
+                <div class="step">
+                    <img src="../img/certification/step-2.png" alt="" class="step-two">
+                </div>
+                <div class="f28 mt15">个人信息</div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step-w120">
+                <div class="step">
+                    <img src="../img/certification/step-3.png" alt="" class="step-three">
+                </div>
+                <div class="f28 mt15">手机实名</div>
+            </div>
+        </div> -->
+
+        <div class="user-info">
+
+            <!-- 手机号 -->
+            <div class="user-pwd" id="phoneBox">
+                <label for="phone" class="f28 w148">手机号</label><input type="text" class="inp-txt" placeholder="请输入手机号" id="phone" pattern="[0-9]{0,11}">
+            </div>
+
+            <!-- 服务密码 -->
+            <div class="user-pwd" id="passwordBox">
+                <label for="password" class="f28 w148">服务密码</label>
+                <input type="password" class="inp-txt" placeholder="请输入运营商服务密码" id="password">
+                <span class="phone-code"><a href="operatorList.html">忘记服务密码</a></span>
+            </div>           
+
+            <!-- 图片验证 -->
+            <div class="user-pwd" id="photoCaptchaBox">
+                <label for="imageCode" class="f28 w148">验证码</label>
+                <input type="text" class="inp-txt" maxlength="4" placeholder="请输入图片验证码" id="imageCode">
+                <span class="photo-code"><img src="#" alt="" id="imgCode"></span>
+                <span class="msg-code">
+                    <i class="reset-btn" data-msg-status="true" id="getPictureBtn">获取验证码</i>
+                </span>
+                <!-- <span class="reload"><img src="../img/certification/reload.png" data-photo-status="false" alt="" id="reload"></span> -->
+            </div>
+
+            <!-- 短信验证 -->
+            <div class="user-pwd" id="messageBox">
+                <label for="smsVerify" class="f28 w148">短信验证</label><input type="text" class="inp-txt" maxlength="6" placeholder="请输入短信验证码" id="smsVerify">
+                <span class="msg-code">
+                    <i class="reset-btn" data-msg-status="true" id="getCodeBtn">获取验证码</i>
+                </span>
+            </div>
+            <div id="questMessage" class="quest-message"></div>
+        </div>
+
+        <div class="f24 c333 agreement" id="authorizationBox">
+            <input type="checkbox" id="agreement" checked /><label for="agreement">本人同意授权好还查询手机详情信息</label>
+        </div>
+    </section>
+</div>
+<div class="user-sub" id="submitVerification">提交</div>
+
+<!-- build:zepto_js  ../js/lib/zepto.min.js -->
+<script src="../js/lib/zepto.js"></script>
+<script src="../js/lib/touch.js"></script>
+<!-- endbuild -->
+
+<script src="../js/lib/mock-min.js"></script>
+<script src="../js/serverMock.js"></script>
+
+<!-- build:authentication_js  ../js/certification/authentication.min.js -->
+<script src="../js/common.js"></script>
+<script src="../js/lib/alert.js"></script>
+<script src="../js/certification/authentication.js"></script>
+<!-- endbuild -->
+</body>
+</html>
